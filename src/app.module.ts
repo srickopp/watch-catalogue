@@ -3,6 +3,7 @@ import { TypeOrmModule } from "@nestjs/typeorm";
 import { AuthModule } from "./modules/auth/auth.module";
 import ormconfig from "./database/ormconfig";
 import { JwtModule } from "@nestjs/jwt";
+import { WatchesModule } from './modules/watches/watches.module';
 
 @Module({
   imports: [
@@ -13,6 +14,7 @@ import { JwtModule } from "@nestjs/jwt";
       signOptions: { expiresIn: process.env.JWT_EXPIRES_IN },
     }),
     AuthModule,
+    WatchesModule,
   ],
   controllers: [],
   providers: [],
