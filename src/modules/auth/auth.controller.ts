@@ -1,10 +1,16 @@
-import { Body, Controller, Post } from "@nestjs/common";
+import { Body, Controller, Post, UseGuards } from "@nestjs/common";
 import { AuthService } from "./auth.service";
 import { RegisterDto } from "./dto/register.dto";
 import { LoginDto } from "./dto/login.dto";
 import { User } from "src/models/entities/user.entity";
-import { ApiTags } from "@nestjs/swagger";
+import { ApiHeader, ApiTags } from "@nestjs/swagger";
+import { ApiKeyGuard } from "src/guards/api-key.guard";
 
+@ApiHeader({
+  name: "x-api-key",
+  required: false,
+})
+@UseGuards(ApiKeyGuard)
 @ApiTags("auth")
 @Controller("auth")
 export class AuthController {

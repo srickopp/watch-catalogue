@@ -3,8 +3,10 @@ import { AppModule } from "./app.module";
 import { DocumentBuilder, SwaggerModule } from "@nestjs/swagger";
 import { ResponseInterceptor } from "./interceptors/response/reponse.interceptor";
 import { ValidationPipe } from "@nestjs/common";
+import * as dotenv from "dotenv";
 
 async function bootstrap() {
+  dotenv.config();
   const app = await NestFactory.create(AppModule);
   const port = process.env.SERVER_PORT || 3000;
 

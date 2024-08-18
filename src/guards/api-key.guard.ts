@@ -1,4 +1,3 @@
-import * as dotenv from "dotenv";
 import {
   CanActivate,
   ExecutionContext,
@@ -6,8 +5,6 @@ import {
   UnauthorizedException,
 } from "@nestjs/common";
 import { Observable } from "rxjs";
-
-dotenv.config();
 
 @Injectable()
 export class ApiKeyGuard implements CanActivate {
