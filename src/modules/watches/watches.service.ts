@@ -4,7 +4,7 @@ import {
   NotFoundException,
 } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
-import { Watch } from "src/models/entities/watch.entity";
+import { Watch } from "../../models/entities/watch.entity";
 import { Repository } from "typeorm";
 import { CreateWatchCatalogDto } from "./dto/create-watch.dto";
 import { UpdateWatchCatalogDto } from "./dto/update-watch.dto";
