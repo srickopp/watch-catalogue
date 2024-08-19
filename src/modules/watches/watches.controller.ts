@@ -31,6 +31,7 @@ export class WatchesController {
     return this.watchesService.createWatchCatalogue(createWatchDto);
   }
 
+  @UseGuards(AuthGuard)
   @ApiParam({
     name: "id",
   })
@@ -85,6 +86,7 @@ export class WatchesController {
     return this.watchesService.getWatchDetails(id);
   }
 
+  @UseGuards(AuthGuard)
   @ApiParam({
     name: "id",
   })
